@@ -1,0 +1,25 @@
+<head>
+    <link rel="stylesheet" href="{{url_for('static' , filename='css/main.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title>weather forcast</title>    
+</head>
+<body>
+    <div class="container">
+        <div class='p'>
+            <img src="/static/assets/{{weather.lower()}}.png">
+            <h1>{{temp}}°C</h1>
+            <h2>{{city_name}}</h2>
+            <h3>{{today}}</h3>
+        </div>
+        <div class='s'>
+            <img src="/static/assets/wind.png">
+            <p>{{wind_speed}}Km/h
+                <br>wind speed</br>
+            </p>                      
+            <img src="/static/assets/humidity.png">
+            <p>{{humidity}}%
+                <br>humidity</br>
+            </p>  
+        </div>
+    </div>
+</body>           

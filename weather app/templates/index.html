@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="{{url_for('static' , filename='css/main.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title>weather app</title>
+</head>
+<body>
+    <div class='search'>
+        <h1>weather</h1>
+        <form method="POST" action="{{ url_for('Home') }}">
+            <input name="search" type="text" placeholder="search for city">
+            <button ><img src="/static/assets/search.png" ></button>
+        </form>        
+    </div>
+</body>
