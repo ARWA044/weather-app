@@ -1,14 +1,16 @@
 import importlib.util
+import sys
 from pathlib import Path
 from unittest.mock import Mock
 import requests
 import pytest
 
 @pytest.fixture
-def module():
+def module(monkeypatch):
     path = Path(__file__).resolve().parents[1] / "weather app" / "main.py"
     spec = importlib.util.spec_from_file_location("weather_main", path)
     mod = importlib.util.module_from_spec(spec)
+    monkeypatch.setitem(sys.modules, spec.name, mod)
     spec.loader.exec_module(mod)
     return mod
 
